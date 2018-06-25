@@ -1,0 +1,49 @@
+
+<%= render 'posts/list', posts: @posts %>
+
+<div class="booksbody">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-5">
+        <h2>Log in</h2>
+
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="field">
+        <label for="inputEmail">Name</label>
+          <br>
+          <%= f.text_field :name, autofocus: true %>
+        </div>
+        <div class="field">
+          <label for="inputEmail">Password</label>
+          <br>
+          <%= f.password_field :password, autocomplete: "off" %>
+        </div>
+
+<% if devise_mapping.rememberable? -%>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end -%>
+
+        <div class="field">
+          <%= f.submit "サインイン", class:"btn btn-primary" %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <%= render "devise/shared/links" %>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-3 col-xs-offset-9">
+        <p>CopyRight Infratop.inc</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+

@@ -1,0 +1,3 @@
+class BookersController < ApplicationController
+end
+

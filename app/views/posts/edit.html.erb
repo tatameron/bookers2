@@ -1,0 +1,45 @@
+<%= render 'posts/list', posts: @posts %>
+
+<div class="booksbody">
+<div class="container">
+  <div class="row">
+    <div class="col-xs-3">
+<div class="single_text">
+<h1>Editing book</h1>
+<!-- form_for部分 -->
+<%= form_for(@post) do |f| %>
+
+  <div class="field">
+   	<p class="edittitle">Title</p>
+   	<%= f.text_field :books_name, class: "book_title" %>
+   </div>
+   <div class="field">
+
+    <p class="editbody">Opinion</p>
+    <%= f.text_area :caption, class: "book_body" %>
+</div>
+    <%= f.submit 'Update Book' %>
+    <br>
+    <br>
+    <%= link_to "Show", post_path(@post),class:
+    "show_#{@post.id}" %>
+|
+<%= link_to "Back", posts_path(@post),class: "back" %>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<% end %>
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-3 col-xs-offset-9">
+        <p>CopyRight Infratop.inc</p>
+      </div>
+    </div>
+  </div>
+</footer>
